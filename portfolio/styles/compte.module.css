@@ -1,0 +1,13 @@
+.error {
+  color: #999999;
+}
+
+.modifyButton {
+  background: #00c851;
+  color: #f2f2f2;
+  font-weight: bold;
+}
+
+.error:hover {
+  color: #ff4444;
+}

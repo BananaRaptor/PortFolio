@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Roboto:wght@100&display=swap')
+
+$black:        hsl(0, 0%, 4%) 
+$black-bis:    hsl(0, 0%, 7%) 
+$black-ter:    hsl(0, 0%, 14%) 
+
+$grey-darker:  hsl(298, 0%, 33%) 
+$grey-dark:    hsl(0, 0%, 29%) 
+$grey:         hsl(0, 0%, 48%) 
+$grey-light:   hsl(0, 0%, 71%) 
+$grey-lighter: hsl(0, 0%, 86%) 
+
+$white-ter:    hsl(0, 0%, 96%) 
+$white-bis:    hsl(0, 0%, 98%) 
+$white:        hsl(0, 0%, 100%) 
+$MFCAGREEN:    hsl(150°, 100%, 25%)
+$orange:       hsl(14,  100%, 53%) 
+$yellow:       hsl(48,  100%, 67%) 
+$green:        hsl(141, 71%, 48%) 
+$turquoise:    hsl(171, 100%, 41%) 
+$blue:         hsl(217, 71%,  53%) 
+$purple:       hsl(271, 100%, 71%) 
+$red:          hsl(348, 100%, 61%) 
+$maincolour: 	 #101a26
+
+// Typography
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif 
+$family-monospace: monospace 
+$render-mode: optimizeLegibility 
+
+$size-1: 3rem 
+$size-2: 2.5rem 
+$size-3: 2rem 
+$size-4: 1.5rem 
+$size-5: 1.25rem 
+$size-6: 1rem 
+$size-7: 0.75rem 
+
+$weight-light: 300 
+$weight-normal: 400 
+$weight-semibold: 500 
+$weight-bold: 700 
+
+// Body
+$body-background: #fff 
+$body-size: 16px 
+
+// Responsiveness
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px 
+// 960px container + 40px
+$desktop: 1000px 
+// 1152px container + 40
+$widescreen: 1192px 
+// 1344px container + 40
+$fullhd: 1384px 
+
+// Miscellaneous
+$easing: ease-out 
+$radius-small: 2px 
+$radius: 3px 
+$radius-large: 5px 
+$speed: 86ms 
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// 2. Primary colors
+
+$primary: $white  
+
+$info: $maincolour 
+$success: $green 
+$warning: $yellow 
+$danger: $red
+$navbar-burger-color : $white
+$light: $white-ter 
+$dark: $grey-darker 
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// 3. Applied variables
+
+// Invert colors
+$orange-invert: findColorInvert($orange) 
+$yellow-invert: findColorInvert($yellow) 
+$green-invert: findColorInvert($green) 
+$turquoise-invert: findColorInvert($turquoise) 
+$blue-invert: findColorInvert($blue) 
+$purple-invert: findColorInvert($purple) 
+$red-invert: findColorInvert($red) 
+
+$primary-invert: $turquoise-invert 
+$info-invert: $blue-invert 
+$success-invert: $green-invert 
+$warning-invert: $yellow-invert 
+$danger-invert: $red-invert 
+$light-invert: $dark 
+$dark-invert: $light 
+
+// General colors
+$background: $white-ter 
+
+$border: $grey-lighter 
+$border-hover: $grey-light 
+
+// Text colors
+$text: $grey-dark 
+$text-invert: findColorInvert($text) 
+$text-light: $grey 
+$text-strong: $grey-darker 
+
+// Code colors
+$code: $red 
+$code-background: $background 
+
+$pre: $text 
+$pre-background: $background 
+
+// Link colors
+$link: $primary 
+$link-invert: $primary-invert 
+$link-visited: $purple 
+
+$link-hover: $grey-darker 
+$link-hover-border: $grey-light 
+
+$link-focus: $grey-darker 
+$link-focus-border: $primary 
+
+$link-active: $grey-darker 
+$link-active-border: $grey-dark 
+
+// Typography
+$family-primary: $family-sans-serif 
+$family-code: $family-monospace 
+
+$size-small: $size-7 
+$size-normal: $size-6 
+$size-medium: $size-5 
+$size-large: $size-4 
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// 4. Lists and maps
+
+$colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)) 
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 
+
+
+$navbar-height: 3.25rem
+
+.is-sidebar-menu
+  padding: 2.5rem
+  background: $grey-dark
+  li
+    a
+      color: $white
+
+
+div
+  .button
+    float: right
+    margin-bottom: 5vh
+
+.login-hero
+  z-index: 4 
+
+h1,h2,h3,h4,span
+  font-family: 'Mulish', sans-serif
+  color: $white
+
+
+p
+  text-align: justify
+  text-justify: inter-word
+  color: $white
+
+.post-title
+  min-height: 6rem
+  color: $white !important
+
+html
+  font-family: 'Roboto', sans-serif
+  background-color:  $maincolour !important
+
+.login-box
+  max-width: 60vw
+.mt-trash
+  margin-top: 3.2rem !important
+
+.hero.is-info
+  background-color:  $maincolour !important
+  transition:  2s
+
+.hero.is-info
+  background-color:  $maincolour !important
+
+    
+.is-main-content
+  background: $grey-lighter
+  height: 100vh
+  overflow-y: scroll
+
+.navbar-item img 
+    max-height: 12vh !important
+.navbar-burger 
+    min-height: 12vh !important
+
+.BackgroundGrid:after
+  display: block
+  width: 100vw
+  height: 9/16 * 99.4vw
+  content: ""
+  position: absolute
+  z-index: 0
+  opacity: 0.8
+  background: $grey-darker
+
+.BackgroundGrid:before
+  content: ""
+  position: absolute
+  background: url("../public/images/dotgrid.png") repeat
+  z-index: 1
+  width: 100vw
+  height:  9/16 * 99.4vw
+  opacity: 0.8
+
+.is-video-heigth
+  height:  9/16 * 93vw 
+
+.container
+  z-index: 2
+
+.is-1 
+  font-size: 9/16 * 8vw !important
+
+.is-2
+  font-size: 9/16 * 4vw !important
+.overlay 
+    position: absolute
+    top: 9/16 * 60vw
+    max-height: 40%
+    width: 100%
+    z-index: 27
+.blog-posts
+      padding-top: 9/16 * 15vw 
+.post-img-project
+  min-height: 40vh
+.post-title
+  height: 9/16 * 8vw !important
+
+.footer 
+  background-color: #f9fbea !important
+
+.footer-container
+  padding-left: 30vw
+  padding-right: 30vw
+
+.footer-icon
+  color: $black !important
+
+.paragraph
+  min-height: 20vh
+
+@import "../node_modules/bulma/bulma.sass"
+
+
