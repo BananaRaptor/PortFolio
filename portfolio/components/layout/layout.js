@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useWindowDimensions } from "react";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -42,7 +42,9 @@ export default function layout({ children }) {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
+  console.log(useWindowSize().width);
+  console.log(useWindowSize().width < 1200);
+  var isMobile = useWindowSize().width < 1200;
   return (
     <>
       <Head>
@@ -78,11 +80,8 @@ export default function layout({ children }) {
                   </a>
                 </div>
 
-                <div
-                  id="navbarMenu"
-                  className="navbar-menu"
-                >
-                  <div className="navbar-end hamburger-fixed">
+                <div id="navbarMenu" className="navbar-menu">
+                  <div className="navbar-end">
                     <span className="navbar-item">
                       <a className="button is-white is-outlined" href="#Home">
                         <span className="icon">
@@ -171,8 +170,9 @@ export default function layout({ children }) {
                 })}
               >
                 <div
-                  className={classNames("navbar-end hamburger-fixed", {
-                    "is-fixed-top is-inversed": isShrunk,
+                  className={classNames("navbar-end", {
+                    "hamburger-fixed is-fixed-top is-inversed": isMobile,
+                    "is-fixed-top is-inversed ": isShrunk,
                   })}
                 >
                   <span className="navbar-item">
@@ -253,4 +253,30 @@ export default function layout({ children }) {
       <div className="">{children}</div>
     </>
   );
+}
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 }
