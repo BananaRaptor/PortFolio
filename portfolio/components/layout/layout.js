@@ -78,8 +78,11 @@ export default function layout({ children }) {
                   </a>
                 </div>
 
-                <div id="navbarMenu" className="navbar-menu">
-                  <div className="navbar-end">
+                <div
+                  id="navbarMenu"
+                  className="navbar-menu"
+                >
+                  <div className="navbar-end hamburger-fixed">
                     <span className="navbar-item">
                       <a className="button is-white is-outlined" href="#Home">
                         <span className="icon">
@@ -142,7 +145,9 @@ export default function layout({ children }) {
                 </a>
                 <a
                   role="button"
-                  className="navbar-burger burger"
+                  className={classNames("navbar-burger burger", {
+                    "is-fixed-top is-inversed": isShrunk,
+                  })}
                   aria-label="menu"
                   aria-expanded="false"
                   data-target="navbarHeader"
@@ -159,8 +164,17 @@ export default function layout({ children }) {
                 </a>
               </div>
 
-              <div id="navbarMenu" className="navbar-menu">
-                <div className="navbar-end">
+              <div
+                id="navbarMenu"
+                className={classNames("navbar-menu", {
+                  "is-fixed-top is-inversed": isShrunk,
+                })}
+              >
+                <div
+                  className={classNames("navbar-end hamburger-fixed", {
+                    "is-fixed-top is-inversed": isShrunk,
+                  })}
+                >
                   <span className="navbar-item">
                     <a
                       className="button is-white is-outlined"
